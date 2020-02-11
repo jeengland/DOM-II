@@ -1,6 +1,6 @@
 // Your code goes here
 
-// Event 1: Dark mode on button click
+// Event 1: Dark mode on 'D' key press
 
 const darkenable = document.querySelectorAll('*:not(.dark):not(.btn)');
 let mode = 0;
@@ -34,6 +34,9 @@ navLinks.forEach((link) => {
         event.target.style.border = 'none';
         event.target.style.margin = '0px';
     })
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+    })
 });
 
 // Event 3: delete anything by double clicking on it 
@@ -62,7 +65,7 @@ funBus.addEventListener('mouseleave', (event) => {
 
 // Event 5: we like to party
 
-body = document.querySelector('body');
+let body = document.querySelector('body');
 
 funBus.addEventListener('click', () => {
     if (busDoor = open) {
@@ -83,5 +86,44 @@ returnButton.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     returnButton.style.display = 'block';
-
 });
+
+// Event 8: dark side of fun bus
+
+let textElements = document.querySelectorAll('h1, p, h2, h4, a')
+let finished = 0;
+
+body.addEventListener('click', (event) => {
+    if (event.target === body && finished != 1) {
+        body.style.background = 'white';
+        textElements.forEach((element) => {
+            if (element.textContent.includes('Fun')) {
+                element.textContent = element.textContent.replace('Fun', 'Not Fun');
+            }
+            if (element.textContent.includes('fun')) {
+                element.textContent = element.textContent.replace('fun', 'not fun');
+            }
+        })
+    }
+}
+);
+
+// Event 9: add grey background to divs when clicked on
+
+let divs = document.querySelectorAll('div');
+
+divs.forEach((div) => {
+    div.addEventListener('click', () => {
+        div.style.backgroundColor = 'grey';
+    })
+})
+
+// Event 10: add red background to text content when clicked on
+
+textElements.forEach((element) => {
+    element.addEventListener('click', (event) => {
+        event.target.style.backgroundColor = 'red';
+        event.stopPropagation();
+    })
+})
+
