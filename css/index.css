@@ -211,6 +211,21 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .return {
+  background: green;
+  font-size: 1.6rem;
+  color: white;
+  padding: 1%;
+  display: none;
+}
+.main-navigation .nav-container .return:hover {
+  background-color: greenyellow;
+  color: black;
+}
+.main-navigation .nav-container .return:active {
+  background-color: maroon;
+  color: white;
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;

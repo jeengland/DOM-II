@@ -66,6 +66,22 @@ body = document.querySelector('body');
 
 funBus.addEventListener('click', () => {
     if (busDoor = open) {
-        body.styles.animation = 'pulse .2s 20'
+        body.style.animation = 'pulse .2s 10'
     }
 })
+
+// Event 6: return to top
+
+let returnButton = document.querySelector('.return');
+
+returnButton.addEventListener('click', () => {
+    window.scrollTo(pageXOffset, 0);
+    returnButton.style.display = 'none';
+})
+
+// Event 7: only show return button once scrolled
+
+window.addEventListener('scroll', () => {
+    returnButton.style.display = 'block';
+
+});
